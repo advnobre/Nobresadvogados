@@ -89,7 +89,7 @@
             </section>
 
             <div class="flex-grow">
-                <h2 class="text-xl font-semibold mb-3 text-gray-300 sidebar-title">Links Úteis</h2>
+                <h2 class="text-xl font-semibold mb-3 text-gray-300 sidebar-title text-center leading-tight">Consulte Seu Processo Clique Abaixo</h2>
                 <ul class="space-y-2">
                     <!-- Links serão preenchidos pelo JS -->
                 </ul>
@@ -314,14 +314,15 @@
             function init() {
                 renderLinks();
                 
+                // Inicia com o menu aberto por padrão em qualquer tela
                 if (window.innerWidth < 768) {
-                    toggleMobileSidebar(false); // Começa fechado no mobile
-                } else {
-                    // Clica no primeiro link por padrão no desktop
-                    const firstLink = document.querySelector('.nav-link');
-                    if (firstLink) {
-                        firstLink.click();
-                    }
+                    toggleMobileSidebar(true);
+                }
+
+                // Clica no primeiro link por padrão
+                const firstLink = document.querySelector('.nav-link');
+                if (firstLink) {
+                    firstLink.click();
                 }
             }
             
