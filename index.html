@@ -33,73 +33,91 @@
 <body class="bg-gray-100">
 
     <div class="relative min-h-screen md:flex">
-        <!-- Botão do menu hamburguer (visível em mobile) -->
-        <div class="bg-gray-900 text-gray-100 flex justify-between md:hidden">
-            <a href="#" class="block p-4 text-white font-bold">Nobres Advogados</a>
-            <button id="hamburger-button" class="p-4 focus:outline-none focus:bg-gray-700">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+        <!-- Topo Mobile -->
+        <div class="bg-gray-900 text-gray-100 flex justify-between items-center md:hidden">
+             <div class="flex items-center">
+                <!-- O botão agora fica à esquerda do nome -->
+                <button id="hamburger-button" class="p-4 focus:outline-none focus:bg-gray-700 z-40">
+                    <svg id="hamburger-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <!-- Ícone de seta para fechar, substituindo o 'X' -->
+                    <svg id="close-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <a href="#" class="block py-4 pl-0 text-white font-bold">Nobres Advogados</a>
+            </div>
         </div>
 
         <!-- Barra Lateral de Navegação e Ferramentas -->
         <aside id="sidebar" class="bg-gray-800 text-white w-80 max-w-full space-y-4 p-4 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col">
-            <div class="text-center pb-4 border-b border-gray-700">
+            <div class="text-center pb-4 border-b border-gray-700 hidden md:block">
                 <div class="flex items-center justify-center mb-2">
                     <!-- Logo SVG -->
                     <svg class="h-8 w-8 mr-3 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.036.243c-2.132 0-4.14-.818-5.62-2.247m0 0a5.988 5.988 0 01-2.036-.243c-.483-.174-.711-.703-.59-1.202L9.25 5.491m0 0A48.416 48.416 0 0112 4.5c2.291 0 4.545.16 6.75.47M5.25 4.97c-1.01.143-2.01.317-3 .52m3-.52L2.63 15.7c-.122.499.106 1.028.589 1.202.47.174 1 .243 1.536.243 2.132 0 4.14-.818 5.62-2.247m0 0l-5.62 2.247m0 0l5.62-2.247" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.036.243c-2.132 0-4.14-.818-5.62-2.247m0 0a5.988 5.988 0 01-2.036-.243c-.483-.174-.711-.703-.59-1.202L9.25 5.491m0 0A48.416 48.416 0 0112 4.5c2.291 0 4.545.16 6.75.47M5.25 4.97c-1.01.143-2.01.317-3 .52m3-.52L2.63 15.7c-.122.499.106 1.028.589 1.202.47.174 1 .243 1.536.243 2.132 0 4.14-.818-5.62-2.247m0 0l-5.62 2.247m0 0l5.62-2.247" />
                     </svg>
                     <h1 class="text-2xl font-bold">Nobres Advogados</h1>
                 </div>
-                <p class="text-sm text-gray-400">Sua Central Jurídica</p>
-                <p class="text-sm text-gray-400 mt-2">Contato: (85) 99657-5529</p>
+                <p class="text-base text-gray-400">Sua Central Jurídica</p>
+                <p class="text-base text-gray-400 mt-2">Contato: (85) 99657-5529</p>
             </div>
             
              <!-- Seção App Cliente -->
             <div class="border-b border-gray-700 pb-4">
-                 <a href="https://pje-consulta.tjce.jus.br/pje1grau/ConsultaPublica/listView.seam" target="_blank" rel="noopener noreferrer" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 text-center justify-center nav-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" /></svg>
+                 <a href="https://pje-consulta.tjce.jus.br/pje1grau/ConsultaPublica/listView.seam" target="_blank" rel="noopener noreferrer" class="flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors duration-200 text-center justify-center nav-link text-base">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" /></svg>
                     App Cliente - Consulta
                 </a>
             </div>
 
             <!-- Seção de Links Úteis -->
-            <div>
-                <h2 class="text-lg font-semibold mb-3 text-gray-300">Links Úteis</h2>
+            <div class="flex-grow">
+                <h2 class="text-xl font-semibold mb-3 text-gray-300">Links Úteis</h2>
                 <ul class="space-y-2">
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://esaj.tjce.jus.br/cpopg/open.do"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>TJCE - Consulta 1º Grau</a></li>
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://esaj.tjce.jus.br/cposg5/open.do"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>TJCE - Consulta 2º Grau</a></li>
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://pje-consulta.tjce.jus.br/pje1grau/ConsultaPublica/listView.seam"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>PJE CE - Consulta Pública</a></li>
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://seeuintegra.pje.jus.br/seeu/processo/consultaPublica.do?actionType=iniciar"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>Execução Penal - SEEU</a></li>
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://pje.trt7.jus.br/"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>TRT7 - PJe</a></li>
-                    <li><a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://www.stj.jus.br/"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>STJ</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://esaj.tjce.jus.br/cpopg/open.do"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>TJCE - Consulta 1º Grau</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://esaj.tjce.jus.br/cposg5/open.do"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>TJCE - Consulta 2º Grau</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://pje-consulta.tjce.jus.br/pje1grau/ConsultaPublica/listView.seam"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>PJE CE - Consulta Pública</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://seeuintegra.pje.jus.br/seeu/processo/consultaPublica.do?actionType=iniciar"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>Execução Penal - SEEU</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://pje.trt7.jus.br/"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>TRT7 - PJe</a></li>
+                    <li><a href="#" class="flex items-center p-3 text-base rounded-lg hover:bg-gray-700 transition-colors duration-200 nav-link" data-url="https://www.stj.jus.br/"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>STJ</a></li>
                 </ul>
             </div>
             
-            <!-- Seção de Contato WhatsApp -->
-            <div class="pt-4 mt-auto border-t border-gray-700">
-                <h2 class="text-lg font-semibold mb-3 text-gray-300">Fale com um Advogado</h2>
-                <p class="text-center text-blue-300 font-semibold mb-2 animate-pulse">CLIQUE ABAIXO</p>
-                <a href="https://wa.me/5585996575529" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center text-lg">
-                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.34 3.48 16.81L2 22L7.33 20.55C8.75 21.35 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM12.04 20.07C10.51 20.07 9.03 19.63 7.76 18.84L7.4 18.63L3.8 19.55L4.74 16.03L4.53 15.67C3.65 14.33 3.18 12.66 3.18 11.91C3.18 7.01 7.15 3.04 12.04 3.04C16.93 3.04 20.9 7.01 20.9 11.91C20.9 16.81 16.93 20.07 12.04 20.07ZM16.51 14.23C16.27 14.11 15.06 13.52 14.83 13.43C14.6 13.34 14.45 13.3 14.3 13.54C14.15 13.78 13.66 14.36 13.49 14.54C13.32 14.71 13.15 14.73 12.88 14.61C12.61 14.49 11.83 14.23 10.9 13.4C10.16 12.73 9.69 11.92 9.55 11.68C9.41 11.44 9.53 11.3 9.65 11.18C9.76 11.07 9.91 10.87 10.05 10.71C10.19 10.54 10.24 10.43 10.33 10.25C10.42 10.08 10.38 9.94 10.31 9.82C10.24 9.7 10.03 9.17 9.83 8.69C9.64 8.21 9.44 8.28 9.29 8.27H8.8C8.65 8.27 8.42 8.36 8.22 8.56C8.02 8.76 7.47 9.27 7.47 10.42C7.47 11.57 8.25 12.64 8.36 12.78C8.48 12.93 10.03 15.34 12.43 16.3C12.92 16.5 13.28 16.63 13.55 16.73C14.07 16.93 14.51 16.9 14.82 16.84C15.18 16.78 16.14 16.21 16.35 15.63C16.56 15.06 16.56 14.58 16.51 14.46C16.45 14.34 16.36 14.29 16.27 14.23H16.51Z"/></svg>
+            <!-- Seções Inferiores -->
+            <div class="mt-auto">
+                <!-- Seção de Contato WhatsApp -->
+                <div class="pt-4 border-t border-gray-700">
+                    <h2 class="text-xl font-semibold mb-3 text-gray-300">Fale com um Advogado</h2>
+                    <a href="https://wa.me/5585996575529" target="_blank" rel="noopener noreferrer" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center text-lg">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.34 3.48 16.81L2 22L7.33 20.55C8.75 21.35 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM12.04 20.07C10.51 20.07 9.03 19.63 7.76 18.84L7.4 18.63L3.8 19.55L4.74 16.03L4.53 15.67C3.65 14.33 3.18 12.66 3.18 11.91C3.18 7.01 7.15 3.04 12.04 3.04C16.93 3.04 20.9 7.01 20.9 11.91C20.9 16.81 16.93 20.07 12.04 20.07ZM16.51 14.23C16.27 14.11 15.06 13.52 14.83 13.43C14.6 13.34 14.45 13.3 14.3 13.54C14.15 13.78 13.66 14.36 13.49 14.54C13.32 14.71 13.15 14.73 12.88 14.61C12.61 14.49 11.83 14.23 10.9 13.4C10.16 12.73 9.69 11.92 9.55 11.68C9.41 11.44 9.53 11.3 9.65 11.18C9.76 11.07 9.91 10.87 10.05 10.71C10.19 10.54 10.24 10.43 10.33 10.25C10.42 10.08 10.38 9.94 10.31 9.82C10.24 9.7 10.03 9.17 9.83 8.69C9.64 8.21 9.44 8.28 9.29 8.27H8.8C8.65 8.27 8.42 8.36 8.22 8.56C8.02 8.76 7.47 9.27 7.47 10.42C7.47 11.57 8.25 12.64 8.36 12.78C8.48 12.93 10.03 15.34 12.43 16.3C12.92 16.5 13.28 16.63 13.55 16.73C14.07 16.93 14.51 16.9 14.82 16.84C15.18 16.78 16.14 16.21 16.35 15.63C16.56 15.06 16.56 14.58 16.51 14.46C16.45 14.34 16.36 14.29 16.27 14.23H16.51Z"/>
+                    </svg>
                     Fale com um Advogado
                 </a>
             </div>
 
             <!-- Seção de Anotações -->
-            <div class="pt-4 border-t border-gray-700">
-                <h2 class="text-lg font-semibold mb-3 text-gray-300">Anotações Rápidas</h2>
-                <textarea id="notes-textarea" class="w-full h-32 bg-gray-700 text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Digite suas anotações aqui..."></textarea>
+            <div class="pt-4 mt-4 border-t border-gray-700">
+                <h2 class="text-xl font-semibold mb-3 text-gray-300">Anotações Rápidas</h2>
+                <textarea id="notes-textarea" class="w-full h-32 bg-gray-700 text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-base" placeholder="Digite suas anotações aqui..."></textarea>
             </div>
+        </div>
         </aside>
 
         <!-- Overlay -->
-         <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 hidden z-20"></div>
+         <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 hidden z-20 md:hidden"></div>
 
         <!-- Área de Conteúdo Principal -->
-        <main class="flex-1 flex flex-col h-screen">
+        <main class="flex-1 flex flex-col h-screen relative">
+             <!-- Botão para Esconder/Mostrar Menu (Desktop) -->
+            <button id="desktop-toggle-button" class="hidden md:block absolute top-2 left-2 z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition">
+                <svg id="toggle-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
             <div id="welcome-message" class="flex-1 flex flex-col items-center justify-center text-gray-600 p-8 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" /></svg>
                 <h2 class="text-2xl md:text-3xl font-light">Bem-vindo ao Painel Nobres Advogados</h2>
@@ -110,10 +128,21 @@
         </main>
     </div>
 
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5585996575529" target="_blank" rel="noopener noreferrer" title="Fale com um Advogado no WhatsApp" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-40">
+        <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.61 15.34 3.48 16.81L2 22L7.33 20.55C8.75 21.35 10.36 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 6.45 17.5 2 12.04 2ZM12.04 20.07C10.51 20.07 9.03 19.63 7.76 18.84L7.4 18.63L3.8 19.55L4.74 16.03L4.53 15.67C3.65 14.33 3.18 12.66 3.18 11.91C3.18 7.01 7.15 3.04 12.04 3.04C16.93 3.04 20.9 7.01 20.9 11.91C20.9 16.81 16.93 20.07 12.04 20.07ZM16.51 14.23C16.27 14.11 15.06 13.52 14.83 13.43C14.6 13.34 14.45 13.3 14.3 13.54C14.15 13.78 13.66 14.36 13.49 14.54C13.32 14.71 13.15 14.73 12.88 14.61C12.61 14.49 11.83 14.23 10.9 13.4C10.16 12.73 9.69 11.92 9.55 11.68C9.41 11.44 9.53 11.3 9.65 11.18C9.76 11.07 9.91 10.87 10.05 10.71C10.19 10.54 10.24 10.43 10.33 10.25C10.42 10.08 10.38 9.94 10.31 9.82C10.24 9.7 10.03 9.17 9.83 8.69C9.64 8.21 9.44 8.28 9.29 8.27H8.8C8.65 8.27 8.42 8.36 8.22 8.56C8.02 8.76 7.47 9.27 7.47 10.42C7.47 11.57 8.25 12.64 8.36 12.78C8.48 12.93 10.03 15.34 12.43 16.3C12.92 16.5 13.28 16.63 13.55 16.73C14.07 16.93 14.51 16.9 14.82 16.84C15.18 16.78 16.14 16.21 16.35 15.63C16.56 15.06 16.56 14.58 16.51 14.46C16.45 14.34 16.36 14.29 16.27 14.23H16.51Z"/>
+        </svg>
+    </a>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Elementos da DOM
             const hamburgerButton = document.getElementById('hamburger-button');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            const desktopToggleButton = document.getElementById('desktop-toggle-button');
+            const toggleIcon = document.getElementById('toggle-icon');
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
             const links = document.querySelectorAll('.nav-link');
@@ -123,20 +152,38 @@
             
             let activeLink = null;
             
-            // Função para fechar a sidebar
-            const closeSidebar = () => {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
+            const showMobileSidebar = () => {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                hamburgerIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
             };
 
-            // Abrir/Fechar a sidebar
+            const hideMobileSidebar = () => {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            };
+
+            // Abrir/Fechar a sidebar (Mobile)
             hamburgerButton.addEventListener('click', function(e) {
                 e.stopPropagation();
-                sidebar.classList.toggle('-translate-x-full');
-                overlay.classList.toggle('hidden');
+                // Verifica se a sidebar está escondida para decidir se mostra ou esconde
+                if (sidebar.classList.contains('-translate-x-full')) {
+                    showMobileSidebar();
+                } else {
+                    hideMobileSidebar();
+                }
             });
             
-            overlay.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', hideMobileSidebar);
+
+             // Abrir/Fechar a sidebar (Desktop)
+            desktopToggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('md:hidden');
+                toggleIcon.classList.toggle('rotate-180');
+            });
 
             // Carregar dados salvos do localStorage
             loadSavedData();
@@ -145,20 +192,19 @@
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
                     if (this.getAttribute('target') === '_blank') {
-                        // Se for link externo (App Cliente, WhatsApp), não previne o padrão.
                         return;
                     }
 
                     e.preventDefault();
                     
                     if (window.innerWidth < 768) { // md breakpoint
-                        closeSidebar();
+                       hideMobileSidebar();
                     }
                     
                     if (activeLink) {
                         activeLink.classList.remove('bg-gray-700');
                     }
-                    if(this.dataset.url){ // Apenas links internos são marcados como ativos
+                    if(this.dataset.url){ 
                          this.classList.add('bg-gray-700');
                          activeLink = this;
                     }
@@ -186,11 +232,14 @@
                 notesTextarea.value = savedNotes;
             }
 
-            // Inicia com o site do TJCE carregado por padrão em telas maiores
-            if (window.innerWidth >= 768) {
-                document.querySelector('.nav-link[data-url="https://esaj.tjce.jus.br/cpopg/open.do"]').click();
+            // Define o estado inicial do menu no mobile
+            if (window.innerWidth < 768) {
+                showMobileSidebar();
+            } else {
+                 document.querySelector('.nav-link[data-url="https://esaj.tjce.jus.br/cpopg/open.do"]').click();
             }
         });
     </script>
 </body>
 </html>
+
